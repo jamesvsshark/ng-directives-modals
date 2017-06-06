@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="sampleApp">
+
+<head>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="app.js"></script>
+  <script src="app.controller.js"></script>
+  <script src="directives/hello-world/hello-world.directive.js"></script>
+  <script src="directives/player-card/player-card.directive.js"></script>
+  <script src="directives/player-headlines/player-headlines.directive.js"></script>
+  <script src="modals/item-modal/item-modal.controller.js"></script>
+</head>
+
+<body ng-controller="SampleAppCtrl as vm">
+  <h1>Directives.</h1>
+
+  <!-- simple directive -->
+  <div data-hello-world></div>
+
+  <data-player-headlines data-headline="vm.breakingNews"></data-player-headlines>
+
+  <!-- Below player cards repeated-->
+  <data-player-card data-player-name="John Smith" data-player-gender="Male" data-on-player-status-change="vm.releaseUpdatedNews(headline)"></data-player-card>
+  <data-player-card data-player-name="Mary Joe" data-player-gender="Female" data-on-player-status-change="vm.releaseUpdatedNews(headline)"></data-player-card>
+
+  <!-- Player cards over a loop with interpolation -->
+  <div ng-repeat="player in vm.players">
+    <data-player-card data-player-name="{{player.name}}" data-player-gender="{{player.gender}}" data-on-player-status-change="vm.releaseUpdatedNews(headline)">
+    </data-player-card>
+  </div>
+
+
+
+  <!-- Modals -->
+  <hr />
+  <h1>Modals.</h1>
+
+  <button ng-click="vm.openSimpleModal()">Simple modal</button>
+
+  <p>Inventory items</p>
+  <ul ng-repeat="item in vm.items">
+    <li><a ng-click="vm.openItem(item)">{{item.name}}</a></li>
+  </ul>
+
+</body>
+
+</html>

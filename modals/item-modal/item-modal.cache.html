@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <h3 class="modal-title">I'm a modal!</h3>
+</div>
+<div class="modal-body">
+  Selected item: <pre>{{vm.item | json}}</pre>
+
+  <input type="text" ng-model="vm.itemCC.name"/>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="vm.submit()">Submit</button>
+  <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+</div>

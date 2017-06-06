@@ -1,0 +1,24 @@
+{
+  "name": "ng-directives-modals",
+  "version": "1.0.0",
+  "description": "Code samples for AngularJS Directives and Angular Bootstrap UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "directives",
+    "angular",
+    "ui",
+    "angular",
+    "bootstrap"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.2.28",
+    "angular-ui-bootstrap": "^0.12.1",
+    "http-server": "^0.10.0"
+  }
+}
